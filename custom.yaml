@@ -86,8 +86,8 @@ ingress:
 appConfig:
   PORT: "3000"
   DB_NAME: todo_app
-  DB_HOST: backend-svc
-  BACKEND_DNS: "backend-svc"
+  DB_HOST: database-svc
+  BACKEND_DNS: backend-svc
   BACKEND_PORT: "3000"
 
 appSecrets:
