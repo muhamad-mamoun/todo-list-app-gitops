@@ -42,7 +42,7 @@ database:
   volumes:
     - name: mysql-data
       persistentVolumeClaim:
-        claimName: database-pvc
+        claimName: application-pvc
   volumeMounts:
     - name: mysql-data
       mountPath: /var/lib/mysql
