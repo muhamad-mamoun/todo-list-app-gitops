@@ -1,8 +1,8 @@
 frontend:
   replicaCount: 3
   image:
-    repository: m2moun/todo-list-app-frontend
-    tag: v1.0
+    repository: 729798775365.dkr.ecr.us-east-1.amazonaws.com/frontend
+    tag: v1.1
   env:
     - name: BACKEND_DNS
       valueFrom:
@@ -18,8 +18,8 @@ frontend:
 backend:
   replicaCount: 3
   image:
-    repository: m2moun/todo-list-app-backend
-    tag: v1.0
+    repository: 729798775365.dkr.ecr.us-east-1.amazonaws.com/backend
+    tag: v1.1
   service:
     port: 3000
   envFrom:
