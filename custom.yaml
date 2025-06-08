@@ -47,9 +47,6 @@ database:
   volumeMounts:
     - name: mysql-data
       mountPath: /var/lib/mysql
-  volume:
-    size: 4Gi
-    id: vol-0d8bce7f2df40b737
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1b
   env:
