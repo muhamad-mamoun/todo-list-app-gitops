@@ -41,9 +41,8 @@ database:
     port: 3306
   volumes:
     - name: mysql-data
-      hostPath:
-        path: /data
-        pathType: DirectoryOrCreate
+      persistentVolumeClaim:
+        claimName: database-pvc
   volumeMounts:
     - name: mysql-data
       mountPath: /var/lib/mysql
