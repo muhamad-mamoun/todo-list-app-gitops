@@ -18,7 +18,7 @@ frontend:
 backend:
   replicaCount: 3
   image:
-    repository: 729798775365.dkr.ecr.us-east-1.amazonaws.com/backend
+    repository: 729798775365.dkr.ecr.us-east-1.amazonaws.com/frontend
     tag: v1.0
   service:
     port: 3000
@@ -41,8 +41,9 @@ database:
     port: 3306
   volumes:
     - name: mysql-data
-      persistentVolumeClaim:
-        claimName: application-pvc
+      hostPath:
+        path: /data
+        pathType: DirectoryOrCreate
   volumeMounts:
     - name: mysql-data
       mountPath: /var/lib/mysql
@@ -88,8 +89,3 @@ appConfig:
   DB_HOST: database-svc
   BACKEND_DNS: backend-svc
   BACKEND_PORT: "3000"
-
-appSecrets:
-  JWT_SECRET: "RHVtbXlTZWNyZXRGb3JUZXN0"
-  DB_USER: "YWRtaW4="
-  DB_PASSWORD: "YWRtaW4="
