@@ -1,0 +1,14 @@
+helm:
+  parameters:
+  - name: frontend.image.repository
+    value: 729798775365.dkr.ecr.us-east-1.amazonaws.com/frontend
+    forcestring: true
+  - name: frontend.image.tag
+    value: v1.1
+    forcestring: true
+  - name: backend.image.repository
+    value: 729798775365.dkr.ecr.us-east-1.amazonaws.com/backend
+    forcestring: true
+  - name: backend.image.tag
+    value: v1.1
+    forcestring: true
